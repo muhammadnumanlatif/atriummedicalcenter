@@ -1,0 +1,84 @@
+---
+// Insurance plans component
+const plans = [
+  "Medicare", "Medicaid", "Blue Cross Blue Shield", "Aetna", 
+  "Cigna", "UnitedHealthcare", "Humana", "Tricare", "Commercial Plans"
+];
+---
+
+<section class="insurance-section">
+  <div class="container insurance-wrapper">
+    <div class="insurance-header">
+      <span class="sub-heading">Insurance Accepted</span>
+      <h2>We Work With Leading Healthcare Providers</h2>
+      <p>Discover our accepted plans or contact our administrative team for coverage verification.</p>
+    </div>
+    
+    <div class="plans-grid">
+      {plans.map(plan => (
+        <div class="plan-card">
+          <span class="check-icon">✓</span>
+          <span class="plan-name">{plan}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="insurance-cta">
+      <a href="/contact" class="btn-outline">Verify Your Coverage →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .insurance-section {
+    background-color: var(--color-surface-soft);
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--color-hairline);
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  .insurance-wrapper {
+    text-align: center;
+  }
+  .sub-heading {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .insurance-header h2 {
+    font-size: 2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 0.75rem;
+  }
+  .insurance-header p {
+    color: var(--color-mute);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .plan-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 1rem 1.25rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+  .check-icon {
+    color: var(--color-primary);
+    font-weight: 800;
+
+  }
+  .insurance-cta {
+    margin-top: 1.5rem;
+  }
+</style>

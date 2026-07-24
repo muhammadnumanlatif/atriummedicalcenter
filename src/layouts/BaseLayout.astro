@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = "ATRIUM MEDICAL CENTER | Long-Term Acute Care Hospital (LTACH) in Stafford, TX",
+  description = "ATRIUM MEDICAL CENTER is a leading 68-bed Long-Term Acute Care Hospital (LTACH) in Stafford, Texas (11929 West Airport Blvd). 24/7 nursing, ICU, & specialized therapy.",
+  canonicalUrl = "https://www.atriummedicalcenter.com"
+} = Astro.props;
+
+import '../styles/global.css';
+import SchemaGeo from '../components/SchemaGeo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/main-logo.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- GEO & Local SEO Meta -->
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Stafford" />
+    <meta name="geo.position" content="29.6268;-95.5683" />
+    <meta name="ICBM" content="29.6268, -95.5683" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="ATRIUM MEDICAL CENTER" />
+    <meta property="og:image" content="https://www.atriummedicalcenter.com/main-logo.png" />
+
+    <!-- JSON-LD Microdata -->
+    <SchemaGeo />
+  </head>
+  <body>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

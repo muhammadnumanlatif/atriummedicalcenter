@@ -1,0 +1,162 @@
+---
+// Hero Section with full-bleed video background, poster fallback, and responsive overlay controls
+---
+
+<section class="hero-video-section">
+  <div class="video-container">
+    <video muted loop playsinline autoplay poster="/main-logo.png" id="bg-video">
+      <source src="/hero-video.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="container hero-content-wrapper">
+    <div class="hero-text-card">
+      <span class="hero-badge">Long-Term Acute Care Hospital (LTACH) • Stafford, TX</span>
+      <h1 class="hero-title">Partnering in Your <span>Journey to Wellness.</span></h1>
+      <p class="hero-subtitle">
+        At ATRIUM MEDICAL CENTER, we go beyond care—we walk alongside you, empowering your wellness with expert support tailored just for you.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/services" class="btn-primary">Explore Our Services</a>
+        <a href="/contact#tour" class="btn-gold">Schedule a Tour</a>
+      </div>
+
+      <!-- Quick Care Highlights Bar -->
+      <div class="hero-stats-bar">
+        <div class="stat-item">
+          <strong>68 Beds</strong>
+          <span>Total Hospital Capacity</span>
+        </div>
+        <div class="stat-item">
+          <strong>20 ICU Beds</strong>
+          <span>Dedicated Intensive Care</span>
+        </div>
+        <div class="stat-item">
+          <strong>90+ Physicians</strong>
+          <span>Board-Certified Specialists</span>
+        </div>
+        <div class="stat-item">
+          <strong>24/7 Care</strong>
+          <span>Physicians & Nursing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-video-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--color-on-dark);
+  }
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  #bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(7, 29, 24, 0.92) 0%, rgba(7, 29, 24, 0.75) 50%, rgba(7, 29, 24, 0.45) 100%);
+  }
+
+  .hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-text-card {
+    max-width: 720px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background-color: rgba(14, 115, 85, 0.35);
+    color: #e6f4ee;
+    border: 1px solid var(--color-primary-light);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .hero-title span {
+    color: #35c49b;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-on-dark-mute);
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .hero-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: rgba(7, 29, 24, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-hairline-strong);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+  }
+  .stat-item strong {
+    display: block;
+    font-size: 1.35rem;
+    color: var(--color-on-dark);
+  }
+  .stat-item span {
+    font-size: 0.78rem;
+    color: var(--color-on-dark-mute);
+  }
+
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.4rem;
+    }
+    .hero-stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 1.9rem;
+    }
+    .hero-stats-bar {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

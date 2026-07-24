@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Careers & Employment | ATRIUM MEDICAL CENTER Stafford, TX"
+  description="Join the clinical team at ATRIUM MEDICAL CENTER in Stafford, TX. Explore career opportunities for RNs, therapists, physicians, and healthcare staff."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Career Opportunities</h1>
+      <p>Become part of our expert clinical healthcare team in Stafford, TX</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container grid-2">
+      <div class="careers-intro">
+        <span class="sub-heading">Work With Us</span>
+        <h2>Build Your Career in Long-Term Acute Care</h2>
+        <p>
+          At <strong>Atrium Medical Center</strong>, we know our staff is our most valued asset. As a 68-bed long-term acute care hospital, we offer a supportive "Big Town" atmosphere where every employee can thrive professionally while making a direct impact on patient recovery.
+        </p>
+        <p>
+          We offer advanced educational programs, competitive compensation, comprehensive health benefits, and flexible scheduling for registered nurses, respiratory therapists, physical therapists, clinical staff, and administrative team members.
+        </p>
+
+        <h3>Employee Benefits Include:</h3>
+        <ul class="benefits-list">
+          <li>✓ Competitive salary & shift differential pay</li>
+          <li>✓ Comprehensive Health, Dental & Vision insurance</li>
+          <li>✓ 401(k) retirement savings plan with match</li>
+          <li>✓ Continuing Education Units (CEU) & tuition assistance</li>
+          <li>✓ Generous Paid Time Off (PTO) & holiday pay</li>
+        </ul>
+      </div>
+
+      <div class="application-form-card">
+        <h3>Submit Your Application</h3>
+        <form class="careers-form" action="/contact" method="GET">
+          <input type="text" placeholder="Full Name *" required />
+          <input type="email" placeholder="Email Address *" required />
+          <input type="tel" placeholder="Phone Number *" required />
+          <select required>
+            <option value="">Select Position Specialty *</option>
+            <option value="rn">Registered Nurse (RN) / ICU Nurse</option>
+            <option value="rt">Respiratory Therapist (RT)</option>
+            <option value="pt">Physical / Occupational / Speech Therapist</option>
+            <option value="cna">Certified Nursing Assistant (CNA)</option>
+            <option value="admin">Administration / Support Staff</option>
+          </select>
+          <textarea placeholder="Tell us about your experience..." rows="4"></textarea>
+          <button type="submit" class="btn-primary">Apply Now →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sub-heading {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3.5rem;
+  }
+
+  .careers-intro h2 {
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .careers-intro p {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  .careers-intro h3 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: var(--color-ink);
+  }
+
+  .benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .benefits-list li {
+    font-size: 1rem;
+    color: var(--color-body);
+    font-weight: 500;
+  }
+
+  .application-form-card {
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+  }
+  .application-form-card h3 {
+    font-size: 1.4rem;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+  }
+  .careers-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .careers-form input, .careers-form select, .careers-form textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

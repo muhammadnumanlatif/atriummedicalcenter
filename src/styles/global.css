@@ -1,0 +1,138 @@
+/* Atrium Medical Center - Global Design System Tokens */
+:root {
+  --color-primary: #08533d;
+  --color-primary-dark: #053a2b;
+  --color-primary-light: #0e7355;
+  --color-ink: #0c1a15;
+  --color-canvas: #ffffff;
+  --color-surface-dark: #071d18;
+  --color-surface-soft: #f2f7f4;
+  --color-surface-elevated: #0f2c25;
+  --color-hairline: #d5e2dc;
+  --color-hairline-strong: #234d40;
+  --color-body: #1b2c26;
+  --color-mute: #607870;
+  --color-stone: #829990;
+  --color-ash: #a5b8b0;
+  --color-on-dark: #ffffff;
+  --color-on-dark-mute: rgba(255, 255, 255, 0.75);
+  --color-link-blue: #0056a7;
+  --color-accent-gold: #938304;
+  --color-accent-gold-pale: #fef9db;
+  --color-accent-green-pale: #e6f4ee;
+
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --border-radius: 6px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --max-width: 1280px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-accent-gold);
+  color: var(--color-on-dark);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-accent-gold);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background-color: #7b6d03;
+  border-color: #7b6d03;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+}

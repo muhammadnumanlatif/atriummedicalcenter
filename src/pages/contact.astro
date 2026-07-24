@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Us & Directions | ATRIUM MEDICAL CENTER Stafford, TX"
+  description="Contact ATRIUM MEDICAL CENTER in Stafford, TX. Phone: 281-207-8200 | Address: 11929 West Airport Blvd. Schedule a facility tour or send patient referrals."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Contact Us & Facility Directions</h1>
+      <p>11929 West Airport Blvd., Stafford, Texas 77477 • Phone: 281-207-8200</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container grid-2">
+      <!-- Contact Cards -->
+      <div class="contact-info-col">
+        <span class="sub-heading">Get In Touch</span>
+        <h2>ATRIUM MEDICAL CENTER Contact Information</h2>
+        <p class="intro-p">
+          Our admissions team, clinical liaisons, and administrative personnel are standing by 24 hours a day, 7 days a week to support physicians, patients, and families.
+        </p>
+
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3>Hospital Address</h3>
+            <p>11929 West Airport Blvd.<br/>Stafford, Texas 77477</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3>Phone & Fax Numbers</h3>
+            <p>Phone: <a href="tel:2812078200"><strong>281-207-8200</strong></a></p>
+            <p>Fax: <strong>281-207-8388</strong></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3>Email Address</h3>
+            <p><a href="mailto:admin@atriummedicalcenter.com">admin@atriummedicalcenter.com</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">🏛️</div>
+          <div>
+            <h3>Hospital License</h3>
+            <p>State of Texas License #100026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact & Tour Form -->
+      <div class="form-card" id="tour">
+        <h3>Send Us a Message or Schedule a Tour</h3>
+        <form class="contact-form">
+          <input type="text" placeholder="Full Name *" required />
+          <input type="email" placeholder="Email Address *" required />
+          <input type="tel" placeholder="Phone Number *" required />
+          <select>
+            <option value="inquiry">General Inquiry</option>
+            <option value="tour">Schedule a Hospital Tour</option>
+            <option value="referral">Physician / Patient Referral</option>
+            <option value="billing">Billing / Managed Care Question</option>
+          </select>
+          <textarea placeholder="Your message or preferred tour date..." rows="5" required></textarea>
+
+          <label class="consent-label">
+            <input type="checkbox" required />
+            <span>I consent to the processing of my contact information in accordance with the Privacy Notice.</span>
+          </label>
+
+          <button type="submit" class="btn-primary">Submit Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map Container -->
+  <section class="map-section" id="map">
+    <div class="container text-center">
+      <h2>Location & Directions</h2>
+      <p>Located convenient to Sugar Land, Houston, and Fort Bend County.</p>
+    </div>
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.4891157954117!2d-95.5683!3d29.6268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e70b80f1d5d3%3A0x897931f6e2fa674b!2s11929%20W%20Airport%20Blvd%2C%20Stafford%2C%20TX%2077477!5e0!3m2!1sen!2sus!4v1700000000000"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sub-heading {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+  .contact-info-col h2 {
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 1rem;
+  }
+  .intro-p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .info-card {
+    display: flex;
+    gap: 1.25rem;
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.25rem;
+  }
+  .info-icon {
+    font-size: 2rem;
+  }
+  .info-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-ink);
+    margin-bottom: 0.25rem;
+  }
+  .info-card p {
+    font-size: 0.95rem;
+    color: var(--color-mute);
+  }
+  .info-card a {
+    color: var(--color-primary);
+  }
+
+  .form-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+  .form-card h3 {
+    font-size: 1.4rem;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  .consent-label {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-mute);
+    align-items: flex-start;
+  }
+  .consent-label input {
+    width: auto;
+    margin-top: 3px;
+  }
+
+  .map-section {
+    background-color: var(--color-surface-soft);
+    padding-top: 3.5rem;
+    border-top: 1px solid var(--color-hairline);
+  }
+  .map-section h2 {
+    font-size: 2rem;
+    color: var(--color-ink);
+    margin-bottom: 0.5rem;
+  }
+  .map-section p {
+    color: var(--color-mute);
+    margin-bottom: 2rem;
+  }
+  .map-frame {
+    width: 100%;
+    line-height: 0;
+  }
+
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

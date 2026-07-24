@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Us | ATRIUM MEDICAL CENTER (LTACH) Stafford, TX"
+  description="Learn about ATRIUM MEDICAL CENTER, a premier 68-bed Long-Term Acute Care Hospital established in 2008 in Stafford, TX featuring 20 ICU beds and 90+ physicians."
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>About ATRIUM MEDICAL CENTER</h1>
+      <p>Premier Long-Term Acute Care Hospital (LTACH) in Stafford, Texas</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container grid-2">
+      <div class="about-main-text">
+        <span class="sub-heading">Who We Are</span>
+        <h2>Dedicated to Extended Intensive Care & Recovery</h2>
+        <p>
+          Welcome to <strong>Atrium Medical Center</strong>, a premier long-term acute care hospital established in 2008. Our facility is committed to providing exceptional, compassionate care for patients with complex medical needs who require extended treatment and recovery.
+        </p>
+        <p>
+          With a total capacity of <strong>68 licensed hospital beds</strong>, of which <strong>20 are dedicated ICU beds</strong>, we are fully equipped to offer intensive, specialized care for those who need it most.
+        </p>
+        <p>
+          At Atrium Medical Center, our team is our greatest asset. We are proud to have over <strong>130 dedicated staff members</strong> who work tirelessly to ensure every patient receives individualized care. Our expert clinical team includes more than <strong>90 board-certified multi-specialty physicians</strong>, bringing vast experience across pulmonary medicine, internal medicine, infectious disease, nephrology, cardiology, and rehabilitation.
+        </p>
+      </div>
+
+      <div class="about-stats-card">
+        <h3>Hospital Profile Specs</h3>
+        <div class="stat-row">
+          <span class="stat-number">68</span>
+          <div class="stat-desc">
+            <strong>Total Licensed Beds</strong>
+            <span>Fully monitored acute care suites</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-number">20</span>
+          <div class="stat-desc">
+            <strong>Intensive Care (ICU) Beds</strong>
+            <span>High-acuity 24/7 monitoring</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-number">90+</span>
+          <div class="stat-desc">
+            <strong>Multi-Specialty Physicians</strong>
+            <span>Board-certified clinical specialists</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-number">130+</span>
+          <div class="stat-desc">
+            <strong>Healthcare Staff</strong>
+            <span>Nurses, therapists & specialists</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values (C.A.R.E.) -->
+  <section class="section-padding values-section">
+    <div class="container text-center">
+      <span class="sub-heading">Our Core Values</span>
+      <h2>The C.A.R.E. Principle</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-letter">C</span>
+          <h3>Compassion</h3>
+          <p>Treating every patient and family member with empathy, kindness, and deep personal care.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-letter">A</span>
+          <h3>Achieve</h3>
+          <p>Striving for optimal clinical outcomes through medical innovation and evidence-based treatment.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-letter">R</span>
+          <h3>Respect</h3>
+          <p>Upholding patient dignity, cultural sensitivity, and open communication at every stage of care.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-letter">E</span>
+          <h3>Empower</h3>
+          <p>Empowering patients and families with clear guidance and personalized rehabilitation plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .page-header p {
+    color: var(--color-on-dark-mute);
+    font-size: 1.1rem;
+  }
+
+  .sub-heading {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .about-main-text h2 {
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .about-main-text p {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .about-stats-card {
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+  }
+  .about-stats-card h3 {
+    font-size: 1.3rem;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+  }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed var(--color-hairline);
+  }
+  .stat-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    min-width: 70px;
+  }
+  .stat-desc strong {
+    display: block;
+    color: var(--color-ink);
+  }
+  .stat-desc span {
+    font-size: 0.85rem;
+    color: var(--color-mute);
+  }
+
+  .values-section {
+    background-color: #fafdfb;
+    border-top: 1px solid var(--color-hairline);
+  }
+  .values-section h2 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0 2.5rem;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .value-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  }
+  .value-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: var(--color-on-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  .value-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-ink);
+  }
+  .value-card p {
+    font-size: 0.9rem;
+    color: var(--color-mute);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

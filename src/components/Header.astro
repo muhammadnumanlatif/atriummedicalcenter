@@ -1,0 +1,360 @@
+---
+const services = [
+  { name: "Pulmonary Management & Respiratory Therapy", slug: "pulmonary-management-and-respiratory-therapy" },
+  { name: "24 Hour Nursing Care", slug: "24-hour-nursing-care" },
+  { name: "Behavioral Health", slug: "behavioral-health" },
+  { name: "24-Hour Physician Coverage", slug: "24-hour-physician-coverage" },
+  { name: "Physical & Occupational Therapy", slug: "physical-and-occupational-therapy" },
+  { name: "Speech Therapy", slug: "speech-therapy" },
+  { name: "Dietitian / Nutritional Care", slug: "dietitian-or-nutritional-care" },
+  { name: "Invasive Procedures", slug: "invasive-procedures" },
+  { name: "All-Stage Burn & Wound Care", slug: "all-stage-burn-and-wound-care" },
+  { name: "In-House / Outpatient Dialysis", slug: "in-house-or-outpatient-dialysis" },
+  { name: "Infectious Disease", slug: "infectious-disease" },
+  { name: "Long-Term IV Antibiotic Therapy", slug: "long-term-intravenous-antibiotic-therapy" },
+  { name: "Medically Complex Care", slug: "medically-complex" },
+  { name: "PICC / Central Lines Insertion", slug: "picc-or-central-lines-insertion-and-care" },
+  { name: "Hyperbaric Oxygen / HBO", slug: "hyperbaric-oxygen-or-hbo" },
+  { name: "Acute Geriatric Psychiatry Unit", slug: "acute-geriatric-psychiatry-unit" }
+];
+---
+
+<!-- Top Utility Bar -->
+<div class="top-bar">
+  <div class="container top-bar-content">
+    <div class="contact-info">
+      <span>📞 Call Us: <a href="tel:2812078200"><strong>281-207-8200</strong></a></span>
+      <span>📠 Fax: <strong>281-207-8388</strong></span>
+      <span>✉️ Email: <a href="mailto:admin@atriummedicalcenter.com">admin@atriummedicalcenter.com</a></span>
+    </div>
+    <div class="top-bar-right">
+      <span class="license">Hospital License #100026</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Sticky Header -->
+<header class="main-header">
+  <div class="container header-container">
+    <a href="/" class="brand-logo">
+      <img src="/main-logo.png" alt="ATRIUM MEDICAL CENTER Logo" width="220" height="60" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About Us</a></li>
+        <li class="dropdown-parent">
+          <a href="/services" class="nav-link dropdown-toggle">Our Services ▾</a>
+          <ul class="dropdown-menu">
+            {services.map(service => (
+              <li>
+                <a href={`/services/${service.slug}`}>{service.name}</a>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/careers" class="nav-link">Careers</a></li>
+        <li><a href="/contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/contact#tour" class="btn-primary">Schedule a Tour</a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <div class="mobile-drawer-header">
+    <img src="/main-logo.png" alt="Atrium Logo" width="160" />
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="mobile-menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li class="mobile-accordion-item">
+      <button class="mobile-accordion-btn" id="mobile-services-btn">
+        <span>Our Services</span>
+        <span class="accordion-icon">▾</span>
+      </button>
+      <div class="mobile-accordion-content" id="mobile-services-content">
+        <ul class="mobile-submenu">
+          {services.map(service => (
+            <li><a href={`/services/${service.slug}`}>{service.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    </li>
+    <li><a href="/careers">Careers</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+  </ul>
+  <div class="mobile-drawer-contact">
+    <p><strong>ATRIUM MEDICAL CENTER</strong></p>
+    <p>11929 West Airport Blvd.<br/>Stafford, Texas 77477</p>
+    <p>Phone: <a href="tel:2812078200">281-207-8200</a></p>
+  </div>
+</div>
+
+<style>
+  .top-bar {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark-mute);
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-hairline-strong);
+  }
+  .top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .contact-info {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .contact-info a {
+    color: var(--color-on-dark);
+  }
+
+  .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-canvas);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+  }
+  .brand-logo img {
+    height: 52px;
+    width: auto;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.75rem;
+    align-items: center;
+  }
+  .nav-link {
+    font-weight: 600;
+    color: var(--color-ink);
+    padding: 0.5rem 0;
+    font-size: 1.02rem;
+    transition: color var(--transition-fast);
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .dropdown-parent {
+    position: relative;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    background-color: var(--color-canvas);
+    min-width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+  }
+  .dropdown-parent:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    color: var(--color-body);
+    font-size: 0.92rem;
+    transition: background var(--transition-fast);
+  }
+  .dropdown-menu a:hover {
+    background-color: var(--color-surface-soft);
+    color: var(--color-primary);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .mobile-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background-color: var(--color-canvas);
+    z-index: 200;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    transition: right var(--transition-normal);
+    overflow-y: auto;
+  }
+  .mobile-drawer.active {
+    right: 0;
+  }
+  .mobile-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  .mobile-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+  .mobile-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .mobile-menu a, .mobile-accordion-btn {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .mobile-accordion-btn:hover {
+    color: var(--color-primary);
+  }
+  .accordion-icon {
+    font-size: 1rem;
+    transition: transform var(--transition-fast);
+    color: var(--color-primary);
+  }
+  .mobile-accordion-btn.expanded .accordion-icon {
+    transform: rotate(180deg);
+  }
+  .mobile-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+  }
+  .mobile-accordion-content.expanded {
+    max-height: 800px;
+  }
+  .mobile-submenu {
+    list-style: none;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--color-surface-soft);
+    margin: 0.25rem 0 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .mobile-submenu a {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--color-body);
+    padding: 0.3rem 0;
+  }
+  .mobile-submenu a:hover {
+    color: var(--color-primary);
+  }
+
+  .mobile-drawer-contact {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-hairline);
+    font-size: 0.85rem;
+    color: var(--color-mute);
+  }
+
+  @media (max-width: 992px) {
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+    .top-bar-content {
+      justify-content: center;
+    }
+    .top-bar-right {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const closeBtn = document.getElementById('mobile-close');
+  const drawer = document.getElementById('mobile-drawer');
+  const servicesBtn = document.getElementById('mobile-services-btn');
+  const servicesContent = document.getElementById('mobile-services-content');
+
+  toggleBtn?.addEventListener('click', () => {
+    drawer?.classList.add('active');
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    drawer?.classList.remove('active');
+  });
+
+  servicesBtn?.addEventListener('click', () => {
+    servicesBtn.classList.toggle('expanded');
+    servicesContent?.classList.toggle('expanded');
+  });
+</script>

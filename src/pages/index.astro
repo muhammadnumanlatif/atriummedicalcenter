@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroVideo from '../components/HeroVideo.astro';
+import InsuranceBanner from '../components/InsuranceBanner.astro';
+
+const featuredServices = [
+  {
+    title: "Pulmonary Management & Respiratory Therapy",
+    slug: "pulmonary-management-and-respiratory-therapy",
+    desc: "24/7 specialized respiratory therapy for COPD, ARDS, pneumonia, asthma, and ventilator weaning care.",
+    icon: "🫁"
+  },
+  {
+    title: "24 Hour Nursing Care",
+    slug: "24-hour-nursing-care",
+    desc: "Compassionate, round-the-clock intensive medical nursing care tailored to complex patient recovery.",
+    icon: "🩺"
+  },
+  {
+    title: "Behavioral Health & Geriatric Psychiatry",
+    slug: "behavioral-health",
+    desc: "Comprehensive emotional and psychological support with dedicated acute geriatric psychiatric units.",
+    icon: "🧠"
+  },
+  {
+    title: "24-Hour Physician Coverage",
+    slug: "24-hour-physician-coverage",
+    desc: "Continuous multi-specialty physician oversight ensuring patient safety and specialized treatment round-the-clock.",
+    icon: "👨‍⚕️"
+  },
+  {
+    title: "Physical, Occupational & Speech Therapy",
+    slug: "physical-and-occupational-therapy",
+    desc: "Personalized rehabilitation programs to rebuild mobility, motor function, and communication skills.",
+    icon: "🏃‍♂️"
+  },
+  {
+    title: "In-House / Outpatient Dialysis",
+    slug: "in-house-or-outpatient-dialysis",
+    desc: "State-of-the-art hemodialysis and renal care delivered right at the bedside for maximum patient comfort.",
+    icon: "🩸"
+  },
+  {
+    title: "All-Stage Burn & Wound Care",
+    slug: "all-stage-burn-and-wound-care",
+    desc: "Advanced wound management, infection control, and hyperbaric oxygen therapy for severe tissue healing.",
+    icon: "🩹"
+  },
+  {
+    title: "Long-Term IV Antibiotics & Infectious Disease",
+    slug: "long-term-intravenous-antibiotic-therapy",
+    desc: "Monitored IV antibiotic therapy and central line/PICC management for severe systemic infections.",
+    icon: "💉"
+  }
+];
+---
+
+<BaseLayout
+  title="ATRIUM MEDICAL CENTER | Long-Term Acute Care Hospital (LTACH) in Stafford, TX"
+  description="ATRIUM MEDICAL CENTER is a leading 68-bed Long-Term Acute Care Hospital (LTACH) in Stafford, Texas. Offering 24/7 nursing, ICU care, pulmonary management, dialysis, and specialized rehabilitation."
+>
+  <!-- Hero Section with Background Video -->
+  <HeroVideo />
+
+  <!-- Welcome Section -->
+  <section class="section-padding welcome-section">
+    <div class="container grid-2">
+      <div class="welcome-text">
+        <span class="sub-heading">Welcome to Atrium Medical Center</span>
+        <h2>Partnering in Your Health & Wellness Journey</h2>
+        <p>
+          At Atrium Medical Center, we are more than just a hospital – we are a dedicated partner in your health and recovery journey. Located at <strong>11929 West Airport Blvd. in Stafford, Texas</strong>, our facility is engineered specifically for patients requiring extended intensive medical treatment.
+        </p>
+        <p>
+          Whether you or your loved one is recovering from complex pulmonary conditions, acute trauma, surgical procedures, or chronic illness, our multi-specialty care team prioritizes clinical excellence, patient dignity, and comprehensive recovery.
+        </p>
+        <div class="welcome-features">
+          <div class="feature-box">
+            <span class="feature-num">68</span>
+            <span>Licensed Hospital Beds</span>
+          </div>
+          <div class="feature-box">
+            <span class="feature-num">20</span>
+            <span>Intensive Care (ICU) Beds</span>
+          </div>
+          <div class="feature-box">
+            <span class="feature-num">91.8%</span>
+            <span>Patient Satisfaction Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome-card">
+        <div class="card-inner">
+          <h3>Facility Quick Facts</h3>
+          <ul class="fact-list">
+            <li>📍 <strong>Address:</strong> 11929 West Airport Blvd., Stafford, TX 77477</li>
+            <li>🏛️ <strong>License:</strong> Texas Hospital License #100026</li>
+            <li>👨‍⚕️ <strong>Physicians:</strong> 90+ Board-Certified Multi-Specialty Doctors</li>
+            <li>👩‍⚕️ <strong>Staff:</strong> 130+ Dedicated Healthcare Professionals</li>
+            <li>🚑 <strong>Emergency/Referrals:</strong> 24/7 Admissions & Referral Line</li>
+          </ul>
+          <a href="/about" class="btn-primary full-width">Learn More About Our Hospital →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services Grid -->
+  <section class="section-padding services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-heading">What We Provide</span>
+        <h2>Comprehensive LTACH Medical Services</h2>
+        <p>Advanced treatment solutions tailored for complex, long-term acute care recovery.</p>
+      </div>
+
+      <div class="services-grid">
+        {featuredServices.map(service => (
+          <div class="service-card">
+            <div class="service-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+            <a href={`/services/${service.slug}`} class="service-link">View Service Details →</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="view-all-wrapper">
+        <a href="/services" class="btn-primary">View All 16 Specialized Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Section -->
+  <InsuranceBanner />
+
+  <!-- Mission & Commitment -->
+  <section class="section-padding mission-section">
+    <div class="container text-center">
+      <span class="sub-heading">We Are Committed</span>
+      <h2>Our Mission Statement</h2>
+      <p class="mission-quote">
+        "By integrating advanced medical practices with a focus on holistic wellness, we aim to empower our patients to achieve and maintain optimal health in a safe, supportive, and healing environment."
+      </p>
+      <div class="values-flex">
+        <div class="value-chip"><strong>C</strong>ompassion</div>
+        <div class="value-chip"><strong>A</strong>chieve</div>
+        <div class="value-chip"><strong>R</strong>espect</div>
+        <div class="value-chip"><strong>E</strong>mpower</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Teaser -->
+  <section class="section-padding contact-teaser">
+    <div class="container grid-2">
+      <div class="teaser-text">
+        <span class="sub-heading">Get in Touch</span>
+        <h2>Have Questions or Need to Send a Referral?</h2>
+        <p>
+          Our admissions team is available 24/7 to assist physicians, families, and healthcare facilities with patient referrals and tour bookings.
+        </p>
+        <div class="contact-details">
+          <p>📞 Phone: <strong>281-207-8200</strong></p>
+          <p>📠 Fax: <strong>281-207-8388</strong></p>
+          <p>✉️ Email: <strong>admin@atriummedicalcenter.com</strong></p>
+        </div>
+        <a href="/contact" class="btn-gold">Contact Us Today</a>
+      </div>
+
+      <div class="teaser-form-card">
+        <h3>Send Us a Message</h3>
+        <form class="simple-form" action="/contact" method="GET">
+          <input type="text" placeholder="Full Name *" required />
+          <input type="email" placeholder="Email Address *" required />
+          <textarea placeholder="How can we help you?" rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sub-heading {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .welcome-text h2 {
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .welcome-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .welcome-features {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .feature-box {
+    background-color: var(--color-surface-soft);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    flex: 1;
+    border: 1px solid var(--color-hairline);
+  }
+  .feature-num {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+  .feature-box span:not(.feature-num) {
+    font-size: 0.8rem;
+    color: var(--color-mute);
+  }
+
+  .welcome-card {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .welcome-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-on-dark);
+    border-bottom: 1px solid var(--color-hairline-strong);
+    padding-bottom: 0.75rem;
+  }
+  .fact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .fact-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .full-width {
+    width: 100%;
+  }
+
+  .services-section {
+    background-color: #fafdfb;
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+  }
+  .section-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin-top: 0.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .service-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+    border-color: var(--color-primary-light);
+  }
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-ink);
+    margin-bottom: 0.75rem;
+  }
+  .service-card p {
+    font-size: 0.92rem;
+    color: var(--color-mute);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .service-link {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .view-all-wrapper {
+    text-align: center;
+  }
+
+  .mission-section {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+  }
+  .mission-section h2 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .mission-quote {
+    font-size: 1.35rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-style: italic;
+    color: var(--color-on-dark-mute);
+    line-height: 1.6;
+  }
+  .values-flex {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .value-chip {
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid var(--color-hairline-strong);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+  }
+  .value-chip strong {
+    color: #35c49b;
+  }
+
+  .contact-teaser {
+    background-color: var(--color-surface-soft);
+  }
+  .teaser-text h2 {
+    font-size: 2rem;
+    color: var(--color-ink);
+    margin: 0.5rem 0 1rem;
+  }
+  .contact-details {
+    margin: 1.5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .teaser-form-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+  }
+  .teaser-form-card h3 {
+    margin-bottom: 1.25rem;
+    color: var(--color-ink);
+  }
+  .simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .simple-form input, .simple-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+  }
+
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
