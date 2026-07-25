@@ -1,8 +1,8 @@
 ---
 // Insurance plans component
 const plans = [
-  "Medicare", "Medicaid", "Blue Cross Blue Shield", "Aetna", 
-  "Cigna", "UnitedHealthcare", "Humana", "Tricare", "Commercial Plans"
+  "Medicare Part A & B", "Medicaid", "Blue Cross Blue Shield", "Aetna", 
+  "Cigna", "UnitedHealthcare", "Humana", "Tricare / VA Care", "Commercial Plans"
 ];
 ---
 
@@ -10,8 +10,8 @@ const plans = [
   <div class="container insurance-wrapper">
     <div class="insurance-header">
       <span class="sub-heading">Insurance Accepted</span>
-      <h2>We Work With Leading Healthcare Providers</h2>
-      <p>Discover our accepted plans or contact our administrative team for coverage verification.</p>
+      <h2>We Work With Leading Healthcare Providers Nationwide</h2>
+      <p>Discover accepted Medicare, Medicaid, and commercial plans across all 50 states.</p>
     </div>
     
     <div class="plans-grid">
@@ -24,7 +24,7 @@ const plans = [
     </div>
 
     <div class="insurance-cta">
-      <a href="/contact" class="btn-outline">Verify Your Coverage →</a>
+      <a href="/verify-coverage" class="btn-primary">Verify Your Coverage Solution →</a>
     </div>
   </div>
 </section>
@@ -57,7 +57,7 @@ const plans = [
     margin: 0 auto 2rem;
   }
   .plans-grid {
-    display: grid;
+    display. grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
@@ -76,7 +76,6 @@ const plans = [
   .check-icon {
     color: var(--color-primary);
     font-weight: 800;
-
   }
   .insurance-cta {
     margin-top: 1.5rem;

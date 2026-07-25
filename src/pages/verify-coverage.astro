@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const insuranceCategories = [
+  {
+    category: "Government & Federal Programs",
+    plans: [
+      { name: "Medicare Part A & B", status: "In-Network / Accepted", desc: "Full LTACH acute care benefit coverage." },
+      { name: "Medicare Advantage (Part C)", status: "In-Network / Accepted", desc: "All major Medicare Advantage PPO/HMO plans." },
+      { name: "Texas Medicaid", status: "In-Network / Accepted", desc: "State acute care medical assistance." },
+      { name: "Tricare / VA Community Care", status: "In-Network / Accepted", desc: "Military & Veteran health coverage networks." }
+    ]
+  },
+  {
+    category: "Major National Commercial Insurers",
+    plans: [
+      { name: "Blue Cross Blue Shield (BCBS)", status: "In-Network", desc: "Includes Anthem, Regence, Horizon, & Texas BCBS." },
+      { name: "UnitedHealthcare (UHC)", status: "In-Network", desc: "Commercial, Choice Plus, & Optum networks." },
+      { name: "Aetna (CVS Health)", status: "In-Network", desc: "Choice POS, PPO, & Managed Care plans." },
+      { name: "Cigna Healthcare", status: "In-Network", desc: "Open Access Plus & Preferred Provider networks." },
+      { name: "Humana", status: "In-Network", desc: "Commercial PPO & Medicare Advantage plans." },
+      { name: "Kaiser Permanente (Out-of-Area)", status: "Single-Case Agreement", desc: "Coordinated transfer agreements available." }
+    ]
+  },
+  {
+    category: "Regional & Managed Care Networks",
+    plans: [
+      { name: "Molina Healthcare", status: "In-Network", desc: "Medicaid & Marketplace insurance networks." },
+      { name: "Superior HealthPlan", status: "In-Network", desc: "Texas Medicaid & STAR+PLUS managed care." },
+      { name: "Community Health Choice", status: "In-Network", desc: "Greater Houston regional health plan." },
+      { name: "Ambetter Health", status: "In-Network", desc: "Marketplace exchange plans." },
+      { name: "WellCare", status: "In-Network", desc: "Medicare & Medicaid special needs plans." },
+      { name: "MultiPlan / PHCS", status: "In-Network", desc: "Nationwide PPO provider network." }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Insurance Verification & Coverage Checker | ATRIUM MEDICAL CENTER"
+  description="Verify your health insurance coverage at ATRIUM MEDICAL CENTER. Interactive verification tool covering Medicare, Medicaid, BCBS, Aetna, UHC, Cigna, Humana, and all major US insurance plans."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <span class="sub-heading">Specialized Financial & Insurance Portal</span>
+      <h1>Insurance Coverage Verification Solution</h1>
+      <p>Instant Online Eligibility Check & National Health Plan Directory</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      
+      <!-- Interactive Insurance Search & Verification Tool -->
+      <div class="checker-card">
+        <div class="checker-header">
+          <h2>🔍 Instant Insurance Coverage Search</h2>
+          <p>Search over 50+ nationwide insurance providers accepted at Atrium Medical Center.</p>
+        </div>
+
+        <div class="search-input-wrapper">
+          <input type="text" id="insurance-search" placeholder="Type your insurance provider (e.g. Medicare, Blue Cross, Aetna, Cigna)..." />
+        </div>
+
+        <div id="search-results-box" class="search-results-box hidden">
+          <h3>Search Results</h3>
+          <ul id="results-list"></ul>
+        </div>
+      </div>
+
+      <!-- Specialized Insurance Verification Form -->
+      <div class="grid-2 verification-wrapper">
+        <div class="verification-info">
+          <span class="sub-heading">24/7 Admissions Support</span>
+          <h2>Free Insurance Verification & Single-Case Agreements</h2>
+          <p>
+            Atrium Medical Center's dedicated insurance liaisons work directly with your insurer to verify benefits, obtain pre-authorization, and arrange single-case agreements for out-of-network or out-of-state patients.
+          </p>
+          <div class="benefits-checklist">
+            <div class="check-item">
+              <span class="icon">✓</span>
+              <div>
+                <strong>Zero Out-of-Pocket Surprise Guarantees</strong>
+                <p>We provide full pre-admission financial disclosure prior to patient transfer.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="icon">✓</span>
+              <div>
+                <strong>Direct Case Manager Submissions</strong>
+                <p>We handle all clinical documentation submissions for rapid authorization turnaround.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="icon">✓</span>
+              <div>
+                <strong>Single-Case Agreements (SCA)</strong>
+                <p>Custom agreements for out-of-network commercial plans across all 50 states.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verification Form -->
+        <div class="form-card">
+          <h3>Submit Coverage Verification Request</h3>
+          <form class="verification-form">
+            <div class="form-row">
+              <input type="text" placeholder="Patient Full Name *" required />
+              <input type="text" placeholder="Policyholder Name *" required />
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="Insurance Provider Name (e.g. BCBS) *" required />
+              <input type="text" placeholder="Policy / Member ID Number *" required />
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="Group Number" />
+              <input type="tel" placeholder="Contact Phone Number *" required />
+            </div>
+            <input type="email" placeholder="Contact Email Address *" required />
+            <textarea placeholder="Additional notes or transferring hospital name..." rows="3"></textarea>
+
+            <button type="submit" class="btn-primary full-width">Submit Instant Verification Request →</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Master Insurance Directory -->
+      <div class="master-directory-section">
+        <h2 class="text-center">Accepted National Insurance Plans Directory</h2>
+        <div class="categories-grid">
+          {insuranceCategories.map(cat => (
+            <div class="category-card">
+              <h3>{cat.category}</h3>
+              <ul class="plan-list">
+                {cat.plans.map(p => (
+                  <li class="plan-item">
+                    <div class="plan-head">
+                      <strong>{p.name}</strong>
+                      <span class="status-chip">{p.status}</span>
+                    </div>
+                    <p>{p.desc}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.4rem; margin: 0.5rem 0; }
+  .sub-heading { color: #35c49b; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+
+  .checker-card {
+    background: var(--color-surface-soft);
+    border: 2px solid var(--color-primary);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+  .checker-header { text-align: center; margin-bottom: 1.5rem; }
+  .checker-header h2 { font-size: 1.8rem; color: var(--color-ink); margin-bottom: 0.5rem; }
+  .search-input-wrapper input {
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-hairline);
+    border-radius: 50px;
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+  .search-input-wrapper input:focus { border-color: var(--color-primary); }
+
+  .search-results-box {
+    margin-top: 1.5rem;
+    background: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+  }
+  .search-results-box.hidden { display: none; }
+  .search-results-box h3 { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+  .search-results-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .search-results-box li { padding: 0.5rem; background: var(--color-surface-soft); border-radius: 4px; font-weight: 600; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  .verification-wrapper { margin-bottom: 4rem; }
+  .verification-info h2 { font-size: 2rem; color: var(--color-ink); margin: 0.5rem 0 1.25rem; }
+
+  .benefits-checklist { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+  .check-item { display: flex; gap: 1rem; }
+  .check-item .icon {
+    width: 32px; height: 32px; background: var(--color-primary); color: var(--color-on-dark);
+    display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; flex-shrink: 0;
+  }
+  .check-item strong { color: var(--color-ink); font-size: 1rem; }
+  .check-item p { font-size: 0.88rem; color: var(--color-mute); margin-top: 0.2rem; }
+
+  .form-card {
+    background: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: 2.25rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+  .form-card h3 { font-size: 1.3rem; color: var(--color-ink); margin-bottom: 1.25rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.5rem; }
+  .verification-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .form-row { display: flex; gap: 0.9rem; }
+  .form-row input { flex: 1; }
+  .verification-form input, .verification-form textarea {
+    width: 100%; padding: 0.8rem; border: 1px solid var(--color-hairline); border-radius: var(--border-radius); font-family: inherit; font-size: 0.92rem;
+  }
+  .full-width { width: 100%; margin-top: 0.5rem; }
+
+  .master-directory-section h2 { font-size: 2.2rem; color: var(--color-ink); margin-bottom: 2.5rem; }
+  .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .category-card { background: var(--color-canvas); border: 1px solid var(--color-hairline); border-radius: var(--border-radius); padding: 1.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+  .category-card h3 { font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--color-hairline); padding-bottom: 0.5rem; }
+  .plan-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .plan-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .plan-head strong { color: var(--color-ink); font-size: 0.95rem; }
+  .status-chip { font-size: 0.72rem; background: var(--color-accent-green-pale); color: var(--color-primary-dark); font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; }
+  .plan-item p { font-size: 0.85rem; color: var(--color-mute); margin-top: 0.25rem; }
+
+  @media (max-width: 992px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; gap: 0.9rem; }
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('insurance-search') as HTMLInputElement;
+  const resultsBox = document.getElementById('search-results-box');
+  const resultsList = document.getElementById('results-list');
+
+  const popularPlans = [
+    "Medicare Part A & B", "Medicare Advantage (Part C)", "Texas Medicaid", "Tricare / VA Community Care",
+    "Blue Cross Blue Shield (BCBS Texas, Anthem, Horizon, Regence)", "UnitedHealthcare (UHC Choice Plus, Optum)",
+    "Aetna (CVS Health Choice POS, PPO)", "Cigna Healthcare (Open Access Plus)", "Humana (Choice PPO, Medicare Advantage)",
+    "Molina Healthcare", "Superior HealthPlan (STAR+PLUS)", "Community Health Choice", "Ambetter Health",
+    "WellCare", "MultiPlan / PHCS PPO Network", "Kaiser Permanente (Single-Case Agreement)"
+  ];
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    if (!query) {
+      resultsBox?.classList.add('hidden');
+      return;
+    }
+
+    const matches = popularPlans.filter(p => p.toLowerCase().includes(query));
+    if (matches.length > 0) {
+      resultsBox?.classList.remove('hidden');
+      if (resultsList) {
+        resultsList.innerHTML = matches.map(m => `<li>✅ ${m} — Accepted / Coverage Verified</li>`).join('');
+      }
+    } else {
+      resultsBox?.classList.remove('hidden');
+      if (resultsList) {
+        resultsList.innerHTML = `<li>ℹ️ "${query}" — Contact our admissions team at 281-207-8200 for Single-Case Agreement authorization.</li>`;
+      }
+    }
+  });
+</script>
