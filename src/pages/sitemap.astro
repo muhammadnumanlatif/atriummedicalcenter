@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pages = [
+  { name: "Home", url: "/" },
+  { name: "About Us", url: "/about" },
+  { name: "Our Services (Master Directory)", url: "/services" },
+  { name: "Pulmonary Management & Respiratory Therapy", url: "/services/pulmonary-management-and-respiratory-therapy" },
+  { name: "24 Hour Nursing Care", url: "/services/24-hour-nursing-care" },
+  { name: "Behavioral Health", url: "/services/behavioral-health" },
+  { name: "24-Hour Physician Coverage", url: "/services/24-hour-physician-coverage" },
+  { name: "Physical and Occupational Therapy", url: "/services/physical-and-occupational-therapy" },
+  { name: "Speech Therapy", url: "/services/speech-therapy" },
+  { name: "Dietitian / Nutritional Care", url: "/services/dietitian-or-nutritional-care" },
+  { name: "Invasive Procedures", url: "/services/invasive-procedures" },
+  { name: "All-Stage Burn & Wound Care", url: "/services/all-stage-burn-and-wound-care" },
+  { name: "In-House / Outpatient Dialysis", url: "/services/in-house-or-outpatient-dialysis" },
+  { name: "Infectious Disease", url: "/services/infectious-disease" },
+  { name: "Long-Term IV Antibiotic Therapy", url: "/services/long-term-intravenous-antibiotic-therapy" },
+  { name: "Medically Complex Care", url: "/services/medically-complex" },
+  { name: "PICC / Central Lines Insertion", url: "/services/picc-or-central-lines-insertion-and-care" },
+  { name: "Hyperbaric Oxygen / HBO", url: "/services/hyperbaric-oxygen-or-hbo" },
+  { name: "Acute Geriatric Psychiatry Unit", url: "/services/acute-geriatric-psychiatry-unit" },
+  { name: "Healthcare Professionals", url: "/healthcare-professionals" },
+  { name: "Managed Care & Insurance", url: "/managed-care" },
+  { name: "Find a Location", url: "/contact#map" },
+  { name: "Schedule a Tour", url: "/contact#tour" },
+  { name: "News & Stories", url: "/news" },
+  { name: "Careers", url: "/careers" },
+  { name: "Contact Us", url: "/contact" }
+];
+---
+
+<BaseLayout
+  title="Sitemap | ATRIUM MEDICAL CENTER Stafford, TX"
+  description="Complete sitemap directory for ATRIUM MEDICAL CENTER in Stafford, TX."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Website Sitemap</h1>
+      <p>Complete Page Navigation Directory</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container sitemap-container">
+      <ul class="sitemap-grid">
+        {pages.map(page => (
+          <li>
+            <a href={page.url}>📄 {page.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  
+  .sitemap-container { max-width: 900px; margin: 0 auto; }
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    list-style: none;
+  }
+  .sitemap-grid li a {
+    display: block;
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline);
+    padding: 1rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    color: var(--color-ink);
+    transition: all var(--transition-fast);
+  }
+  .sitemap-grid li a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateX(4px);
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const professionals = [
+  { role: "Medical Director & Pulmonary Specialists", desc: "Overseeing respiratory therapy, ventilator weaning, and acute pulmonary care." },
+  { role: "Board-Certified Intensivists & Internists", desc: "Providing 24/7 coverage across our 20-bed Intensive Care Unit (ICU)." },
+  { role: "Infectious Disease Consultants", desc: "Specializing in multi-drug resistant organism management and long-term IV antibiotics." },
+  { role: "Nephrology & Dialysis Team", desc: "Managing bedside acute hemodialysis and chronic renal failure therapies." },
+  { role: "Wound Care & Hyperbaric Specialists", desc: "Certified burn and wound specialists administering advanced tissue therapies and HBO." },
+  { role: "Rehabilitation Therapists", desc: "Licensed Physical, Occupational, and Speech-Language Pathologists." }
+];
+---
+
+<BaseLayout
+  title="Healthcare Professionals | ATRIUM MEDICAL CENTER Stafford, TX"
+  description="Meet the 90+ board-certified multi-specialty physicians and 130+ clinical staff at ATRIUM MEDICAL CENTER in Stafford, TX."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Healthcare Professionals & Medical Team</h1>
+      <p>90+ Board-Certified Physicians & 130+ Dedicated Healthcare Professionals</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="intro-box text-center">
+        <h2>Excellence in Clinical Leadership</h2>
+        <p>
+          At Atrium Medical Center, our clinical excellence is driven by a multidisciplinary team of over 90 board-certified physicians, experienced ICU nurses, licensed therapists, and clinical specialists collaborating 24/7 to deliver individualized acute care.
+        </p>
+      </div>
+
+      <div class="pro-grid">
+        {professionals.map(p => (
+          <div class="pro-card">
+            <div class="pro-icon">👨‍⚕️</div>
+            <h3>{p.role}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .intro-box { max-width: 750px; margin: 0 auto 3rem; }
+  .intro-box h2 { font-size: 2.2rem; color: var(--color-ink); margin-bottom: 1rem; }
+  
+  .pro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+  }
+  .pro-card {
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+  }
+  .pro-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .pro-card h3 { font-size: 1.25rem; color: var(--color-ink); margin-bottom: 0.75rem; }
+  .pro-card p { font-size: 0.95rem; color: var(--color-mute); line-height: 1.5; }
+</style>

@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InsuranceBanner from '../components/InsuranceBanner.astro';
+---
+
+<BaseLayout
+  title="Managed Care & Insurance | ATRIUM MEDICAL CENTER Stafford, TX"
+  description="Managed care options, insurance plan acceptance, and pre-authorization support at ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Managed Care & Insurance Plans</h1>
+      <p>Seamless Admission, Insurance Verification & Care Coordination</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container grid-2">
+      <div>
+        <span class="sub-heading">Care Coordination</span>
+        <h2>Partnering with Payers & Managed Care Networks</h2>
+        <p>
+          Atrium Medical Center works directly with commercial insurers, Medicare, Medicaid, HMOs, PPOs, and managed care organizations to facilitate rapid pre-authorizations and seamless hospital-to-hospital patient transfers.
+        </p>
+        <p>
+          Our dedicated Case Management & Managed Care team coordinates all ongoing authorization renewals, peer-to-peer reviews, and discharge planning.
+        </p>
+
+        <ul class="managed-list">
+          <li>✓ 24/7 Insurance eligibility & pre-authorization team</li>
+          <li>✓ Medicare & Medicaid certified LTACH provider</li>
+          <li>✓ Out-of-network single-case agreement negotiation</li>
+          <li>✓ Comprehensive case management & discharge planning</li>
+        </ul>
+      </div>
+
+      <div class="managed-card">
+        <h3>Need Insurance Verification?</h3>
+        <p>Contact our case management team directly for immediate coverage assistance.</p>
+        <div class="contact-box">
+          <p>📞 Phone: <strong>281-207-8200</strong></p>
+          <p>📠 Fax: <strong>281-207-8388</strong></p>
+          <p>✉️ Email: <strong>admin@atriummedicalcenter.com</strong></p>
+        </div>
+        <a href="/contact" class="btn-primary full-width">Contact Managed Care Team →</a>
+      </div>
+    </div>
+  </section>
+
+  <InsuranceBanner />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .sub-heading { color: var(--color-primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; }
+  
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .grid-2 h2 { font-size: 2.2rem; color: var(--color-ink); margin: 0.5rem 0 1.25rem; }
+  .grid-2 p { margin-bottom: 1rem; line-height: 1.6; }
+
+  .managed-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .managed-list li { font-size: 1rem; font-weight: 600; color: var(--color-ink); }
+
+  .managed-card {
+    background: var(--color-surface-dark);
+    color: var(--color-on-dark);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+  }
+  .managed-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--color-on-dark); }
+  .managed-card p { color: var(--color-on-dark-mute); margin-bottom: 1.5rem; }
+  .contact-box {
+    background: rgba(255,255,255,0.08);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+  }
+  .contact-box p { margin-bottom: 0.5rem; color: var(--color-on-dark); }
+  .full-width { width: 100%; }
+
+  @media (max-width: 992px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
