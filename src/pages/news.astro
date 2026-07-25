@@ -4,30 +4,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const news = [
   {
     date: "January 20, 2026",
+    title: "Understanding Long-Term Acute Care Hospitals (LTACH): A Comprehensive Clinical Guide",
+    summary: "In-depth 2,400+ word clinical guide explaining LTACH care models, 24/7 ICU monitoring, ventilator liberation protocols, bedside dialysis, and complex wound care in Stafford, TX.",
+    url: "/news/understanding-ltach-guide",
+    featured: true
+  },
+  {
+    date: "January 10, 2026",
     title: "Atrium Medical Center Expands High-Acuity ICU & Ventilator Weaning Capacity",
-    summary: "Atrium Medical Center announces expanded 20-bed ICU monitoring technology to support complex post-surgical and acute respiratory patients across Greater Houston."
+    summary: "Atrium Medical Center announces expanded 20-bed ICU monitoring technology to support complex post-surgical and acute respiratory patients across Greater Houston.",
+    url: "/services/pulmonary-management-and-respiratory-therapy",
+    featured: false
   },
   {
     date: "December 15, 2025",
     title: "Achieving 91.8% Patient Satisfaction & Care Quality Standards",
-    summary: "Patient and family surveys rate Atrium Medical Center care quality at 91.8%, with over 90% highly recommending the facility for long-term acute care."
+    summary: "Patient and family surveys rate Atrium Medical Center care quality at 91.8%, with over 90% highly recommending the facility for long-term acute care.",
+    url: "/about",
+    featured: false
   },
   {
     date: "November 02, 2025",
     title: "Advanced Wound Care & Hyperbaric Oxygen Therapy Milestones",
-    summary: "Our specialized burn and wound care team highlights key healing benchmarks achieved through integrated hyperbaric oxygen therapy (HBO)."
+    summary: "Our specialized burn and wound care team highlights key healing benchmarks achieved through integrated hyperbaric oxygen therapy (HBO).",
+    url: "/services/all-stage-burn-and-wound-care",
+    featured: false
   }
 ];
 ---
 
 <BaseLayout
   title="News & Stories | ATRIUM MEDICAL CENTER Stafford, TX"
-  description="Latest announcements, clinical updates, and patient stories from ATRIUM MEDICAL CENTER in Stafford, TX."
+  description="Latest clinical guides, announcements, medical updates, and patient stories from ATRIUM MEDICAL CENTER in Stafford, TX."
 >
   <section class="page-header">
     <div class="container text-center">
-      <h1>News & Hospital Stories</h1>
-      <p>Latest Announcements & Healthcare Insights from Atrium Medical Center</p>
+      <h1>News, Articles & Hospital Stories</h1>
+      <p>In-Depth Clinical Guides & Healthcare Insights from Atrium Medical Center</p>
     </div>
   </section>
 
@@ -35,11 +48,12 @@ const news = [
     <div class="container">
       <div class="news-list">
         {news.map(item => (
-          <article class="news-card">
+          <article class={`news-card ${item.featured ? 'featured' : ''}`}>
+            {item.featured && <span class="featured-badge">Featured Clinical Guide</span>}
             <span class="news-date">{item.date}</span>
-            <h2>{item.title}</h2>
+            <h2><a href={item.url}>{item.title}</a></h2>
             <p>{item.summary}</p>
-            <a href="/contact" class="read-more">Read Full Story →</a>
+            <a href={item.url} class="read-more">Read Full Story →</a>
           </article>
         ))}
       </div>
@@ -70,6 +84,23 @@ const news = [
     padding: 2.25rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    position: relative;
+  }
+  .news-card.featured {
+    border: 2px solid var(--color-primary);
+    background: #f7fbf9;
+  }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--color-primary);
+    color: var(--color-on-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 50px;
+    text-transform: uppercase;
   }
   .news-date {
     color: var(--color-primary);
@@ -81,6 +112,13 @@ const news = [
     font-size: 1.5rem;
     color: var(--color-ink);
     margin: 0.5rem 0 0.85rem;
+  }
+  .news-card h2 a {
+    color: var(--color-ink);
+    transition: color var(--transition-fast);
+  }
+  .news-card h2 a:hover {
+    color: var(--color-primary);
   }
   .news-card p {
     color: var(--color-mute);
