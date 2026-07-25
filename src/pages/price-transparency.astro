@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Price Transparency | ATRIUM MEDICAL CENTER"
+  description="Hospital Price Transparency & Standard Charges for ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Hospital Price Transparency</h1>
+      <p>Standard Charges & Pricing Information • Hospital License #100026</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>Hospital Price Transparency Policy</h2>
+      <p>In compliance with the Centers for Medicare & Medicaid Services (CMS) Hospital Price Transparency requirements, Atrium Medical Center provides a comprehensive listing of standard hospital charges for all long-term acute care procedures, room rates, and services.</p>
+      
+      <h2>Financial Counseling & Assistance</h2>
+      <p>Our patient accounting specialists are available to answer pricing questions, provide estimates, and assist with financial options. Contact us at 281-207-8200.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+</style>

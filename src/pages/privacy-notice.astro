@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Notice of Privacy Practices (HIPAA) | ATRIUM MEDICAL CENTER"
+  description="HIPAA Notice of Privacy Practices for ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Notice of Privacy Practices</h1>
+      <p>HIPAA Patient Health Information Protection & Rights</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>Protected Health Information (PHI)</h2>
+      <p>This Notice of Privacy Practices describes how medical information about you may be used and disclosed and how you can get access to this information under the Health Insurance Portability and Accountability Act (HIPAA).</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+</style>

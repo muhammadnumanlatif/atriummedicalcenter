@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Transparency in Coverage | ATRIUM MEDICAL CENTER"
+  description="Transparency in Coverage information for ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Transparency in Coverage</h1>
+      <p>ATRIUM MEDICAL CENTER • Health Plan Machine-Readable Files</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>Machine-Readable Files</h2>
+      <p>Under the Transparency in Coverage Rule, health plans and health insurance issuers are required to post machine-readable files (MRFs) containing in-network negotiated rates and out-of-network allowed amounts.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+</style>

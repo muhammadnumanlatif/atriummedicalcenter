@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Accessibility Policy | ATRIUM MEDICAL CENTER"
+  description="Accessibility Statement and Policy for ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Accessibility Policy</h1>
+      <p>Committed to Digital Accessibility for All Patients</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>Digital Accessibility Commitment</h2>
+      <p>Atrium Medical Center is committed to ensuring digital accessibility for people with disabilities. We continuously apply relevant accessibility standards to improve user experience for everyone, striving to conform to World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG 2.1 Level AA).</p>
+      
+      <h2>Accessibility Assistance</h2>
+      <p>If you experience any difficulty accessing any content on this website, please call us at 281-207-8200 or email admin@atriummedicalcenter.com for assistance.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+</style>

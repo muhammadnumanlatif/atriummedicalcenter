@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Terms of Use | ATRIUM MEDICAL CENTER"
+  description="Website Terms of Use for ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Terms of Use</h1>
+      <p>ATRIUM MEDICAL CENTER • Stafford, TX</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using www.atriummedicalcenter.com, you agree to comply with and be bound by these Terms of Use.</p>
+
+      <h2>2. Medical Disclaimer</h2>
+      <p>The content provided on this website is for informational purposes only and is not intended to substitute for professional medical advice, diagnosis, or treatment. If you are experiencing a medical emergency, please call 911 immediately.</p>
+
+      <h2>3. Intellectual Property</h2>
+      <p>All logos, text, imagery, and code on this site are the property of Atrium Medical Center and protected under copyright laws.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+</style>

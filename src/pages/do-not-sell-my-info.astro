@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Do Not Sell My Info | ATRIUM MEDICAL CENTER"
+  description="Opt-out of personal information sale or sharing at ATRIUM MEDICAL CENTER."
+>
+  <section class="page-header">
+    <div class="container text-center">
+      <h1>Do Not Sell/Share My Personal Information</h1>
+      <p>Your Data Privacy Rights & Opt-Out Request</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container policy-content">
+      <h2>Data Privacy Rights</h2>
+      <p>Atrium Medical Center does not sell your personal or medical health information to third-party advertisers or data brokers. You may submit an opt-out preference request below.</p>
+
+      <div class="opt-out-card">
+        <h3>Submit Opt-Out Request</h3>
+        <form class="simple-form" action="/contact" method="GET">
+          <input type="text" placeholder="Full Name *" required />
+          <input type="email" placeholder="Email Address *" required />
+          <button type="submit" class="btn-primary">Submit Opt-Out Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header { background: var(--color-surface-dark); color: var(--color-on-dark); padding: 4rem 0 3rem; text-align: center; border-bottom: 3px solid var(--color-primary); }
+  .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .policy-content { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+  .policy-content h2 { font-size: 1.5rem; color: var(--color-ink); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 0.4rem; }
+  .policy-content p { color: var(--color-body); margin-bottom: 1.25rem; }
+  .opt-out-card { background: var(--color-surface-soft); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--color-hairline); margin-top: 2rem; }
+  .simple-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .simple-form input { padding: 0.8rem; border: 1px solid var(--color-hairline); border-radius: var(--border-radius); }
+</style>
