@@ -1,8 +1,13 @@
 /* Atrium Medical Center - Global Design System Tokens */
 :root {
-  --color-primary: #08533d;
-  --color-primary-dark: #053a2b;
-  --color-primary-light: #0e7355;
+  --color-primary: #938304;
+  --color-primary-dark: #7b6d03;
+  --color-primary-light: #b5a321;
+  --color-primary-pale: #fef9db;
+  --color-accent-teal: #08533d;
+  --color-accent-teal-dark: #053a2b;
+  --color-accent-teal-light: #0e7355;
+  --color-accent-teal-pale: #e6f4ee;
   --color-ink: #0c1a15;
   --color-canvas: #ffffff;
   --color-surface-dark: #071d18;
@@ -17,9 +22,6 @@
   --color-on-dark: #ffffff;
   --color-on-dark-mute: rgba(255, 255, 255, 0.75);
   --color-link-blue: #0056a7;
-  --color-accent-gold: #938304;
-  --color-accent-gold-pale: #fef9db;
-  --color-accent-green-pale: #e6f4ee;
   --color-bg-alt: #fafdfb;
   --color-accent-mint: #35c49b;
 
@@ -109,24 +111,24 @@ img, video {
   color: var(--color-on-dark);
 }
 
-.btn-gold {
+.btn-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-accent-gold);
+  background-color: var(--color-accent-teal);
   color: var(--color-on-dark);
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border-radius: var(--border-radius);
-  border: 2px solid var(--color-accent-gold);
+  border: 2px solid var(--color-accent-teal);
   transition: all var(--transition-fast);
   cursor: pointer;
 }
 
-.btn-gold:hover {
-  background-color: #7b6d03;
-  border-color: #7b6d03;
+.btn-accent:hover {
+  background-color: var(--color-accent-teal-dark);
+  border-color: var(--color-accent-teal-dark);
 }
 
 .section-padding {
